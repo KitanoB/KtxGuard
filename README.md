@@ -34,7 +34,7 @@ Briefly describe how to use your project after installation.
 
 ## Contributing
 
-Contributions are always welcome! Please see the [Contribution Guide](https://chat.openai.com/c/LINK_TO_CONTRIBUTION_GUIDE) for more information.
+Contributions are always welcome! Please see the [Contribution Guide](https://github.com/KitanoB/KtxGuard/blob/develop/CONTRIBUTION_GUIDE.md) for more information.
 
 # Disclaimer
 
