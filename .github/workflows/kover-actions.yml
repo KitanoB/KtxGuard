@@ -32,27 +32,29 @@ jobs:
       - name: Update Coverage Badge
         run: ./gradlew updateCoverageBadge updateKotlinBadge
 
-      # ... (étapes précédentes)
 
       # Define a timestamp variable
       - name: Set timestamp
         run: echo "TIMESTAMP=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
 
-      # Commit changes to a new branch using the timestamp variable
+      # Commit changes to a new branch
       - name: Commit changes to a new branch
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Actions Bot"
+          git checkout main # ensure you are on the main branch before creating a new one
           git checkout -b update-coverage-badge-${TIMESTAMP}
           git add README.md
           git commit -m "Update code coverage badge" || echo "No changes to commit"
           git remote set-url origin https://${{ secrets.MY_GITHUB_SECRET }}@github.com/${{ github.repository }}.git
-          git push origin HEAD
+          git push origin update-coverage-badge-${TIMESTAMP}
 
+      # Create a Pull Request
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.MY_GITHUB_SECRET }}
           title: "Update code coverage badge"
           body: "Automated update of the code coverage badge."
+          base: main # specify the main branch as the base
           branch: update-coverage-badge-${{ env.TIMESTAMP }}
