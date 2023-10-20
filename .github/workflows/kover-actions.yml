@@ -30,7 +30,7 @@ jobs:
 
       # Update coverage badge
       - name: Update Coverage Badge
-        run: ./gradlew updateCoverageBadge
+        run: ./gradlew updateCoverageBadge  updateKotlinBadge
 
       # Commit changes to README.md
       - name: Commit changes
@@ -39,4 +39,4 @@ jobs:
           git config --local user.name "GitHub Actions Bot"
           git add README.md
           git commit -m "Update code coverage badge" || echo "No changes to commit"
-          git push
+          git push origin HEAD:${{ github.ref }}
