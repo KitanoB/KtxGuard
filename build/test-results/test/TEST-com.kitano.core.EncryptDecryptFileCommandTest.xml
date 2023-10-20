@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kitano.core.EncryptDecryptFileCommandTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-10-20T22:49:39" hostname="fv-az442-235" time="0.384">
+  <properties/>
+  <testcase name="it writes to the given file when no newFilePath provided" classname="com.kitano.core.EncryptDecryptFileCommandTest" time="0.223"/>
+  <testcase name="it writes to a new file when newFilePath is provided" classname="com.kitano.core.EncryptDecryptFileCommandTest" time="0.161"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

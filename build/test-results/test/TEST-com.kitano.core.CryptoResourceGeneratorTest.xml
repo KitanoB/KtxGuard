@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kitano.core.CryptoResourceGeneratorTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-10-20T22:49:39" hostname="fv-az442-235" time="0.167">
+  <properties/>
+  <testcase name="generateIV produces correct length output" classname="com.kitano.core.CryptoResourceGeneratorTest" time="0.001"/>
+  <testcase name="deriveKey throws NoSuchAlgorithmException if invalid algorithm is used" classname="com.kitano.core.CryptoResourceGeneratorTest" time="0.006"/>
+  <testcase name="generateIV produces random output" classname="com.kitano.core.CryptoResourceGeneratorTest" time="0.0"/>
+  <testcase name="generateSalt produces correct length output" classname="com.kitano.core.CryptoResourceGeneratorTest" time="0.0"/>
+  <testcase name="deriveKey produces consistent output" classname="com.kitano.core.CryptoResourceGeneratorTest" time="0.157"/>
+  <testcase name="generateSalt produces random output" classname="com.kitano.core.CryptoResourceGeneratorTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

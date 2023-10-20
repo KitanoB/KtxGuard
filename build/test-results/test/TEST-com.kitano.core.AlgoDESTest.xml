@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kitano.core.AlgoDESTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2023-10-20T22:49:36" hostname="fv-az442-235" time="1.107">
+  <properties/>
+  <testcase name="when encrypt with des same string is not retrieved after decrypt with wrong password" classname="com.kitano.core.AlgoDESTest" time="0.254"/>
+  <testcase name="when encrypt with des string is not retrieved after decrypt with null password" classname="com.kitano.core.AlgoDESTest" time="0.076"/>
+  <testcase name="when encrypt empty string with des and then decrypt returns empty string" classname="com.kitano.core.AlgoDESTest" time="0.153"/>
+  <testcase name="when when encrypt with two fish same string is not retrieved after decrypt with wrong password" classname="com.kitano.core.AlgoDESTest" time="0.153"/>
+  <testcase name="when encrypt long string with aes does throw" classname="com.kitano.core.AlgoDESTest" time="0.159"/>
+  <testcase name="when encrypt special characters with des same string is retrieved after decrypt" classname="com.kitano.core.AlgoDESTest" time="0.15"/>
+  <testcase name="when encrypt with des same string is not retrieved after decrypt with wrong password and wrong key" classname="com.kitano.core.AlgoDESTest" time="0.159"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

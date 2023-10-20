@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kitano.cli.StrategyTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-10-20T22:49:34" hostname="fv-az442-235" time="0.018">
+  <properties/>
+  <testcase name="test selectStrategy with complete args returns DefaultValueStrategy" classname="com.kitano.cli.StrategyTest" time="0.015"/>
+  <testcase name="test selectStrategy with option requiring value followed by empty value returns UserPromptStrategy" classname="com.kitano.cli.StrategyTest" time="0.001"/>
+  <testcase name="test selectStrategy with empty args returns UserPromptStrategy" classname="com.kitano.cli.StrategyTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

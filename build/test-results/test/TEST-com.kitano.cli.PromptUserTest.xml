@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kitano.cli.PromptUserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-10-20T22:49:33" hostname="fv-az442-235" time="0.281">
+  <properties/>
+  <testcase name="when user does not provide arguments a prompt will be displayed" classname="com.kitano.cli.PromptUserTest" time="0.281"/>
+  <system-out><![CDATA[hatsfsB/azPYz/E1dqbgue3fk5wHvQD4rZQLrWlGZCdgVfgwDI5X2rUPhb1Fb0Q4
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

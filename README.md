@@ -1,4 +1,4 @@
-![Coverage](https://img.shields.io/badge/Coverage-85-green) ![GraalVM](https://img.shields.io/badge/GraalVM-21-blue) ![Kotlin](https://img.shields.io/badge/Kotlin-100-orange)
+![Coverage](https://img.shields.io/badge/Coverage-77-green) ![GraalVM](https://img.shields.io/badge/GraalVM-21-blue) ![Kotlin](https://img.shields.io/badge/Kotlin-100-orange)
 
 # KtxGuard
 
