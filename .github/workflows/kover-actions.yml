@@ -1,4 +1,4 @@
-name: Update README Badges
+name: Update Code Coverage Badge
 
 on:
   push:
@@ -9,37 +9,34 @@ on:
       - main
 
 jobs:
-  update-readme:
+  update-coverage-badge:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      # Checkout the code
+      - name: Checkout repository
         uses: actions/checkout@v2
 
+      # Setup JDK
       - name: Set up JDK
         uses: actions/setup-java@v2
         with:
-          distribution: 'temurin'
           java-version: '11'
+          distribution: 'adopt'
 
-      - name: Cache Gradle packages
-        uses: actions/cache@v2
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
+      # Run tests and generate coverage report
+      - name: Run tests and generate coverage report
+        run: ./gradlew test koverHtmlReport
 
-      - name: Run Gradle tasks
-        run: ./gradlew updateCoverageBadge updateKotlinBadge
+      # Update coverage badge
+      - name: Update Coverage Badge
+        run: ./gradlew updateCoverageBadge
 
-      - name: Commit and push changes
+      # Commit changes to README.md
+      - name: Commit changes
         run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git diff
-          git add -A
-          git commit -m "Update README badges" || echo "No changes to commit"
-          git push origin HEAD:${GITHUB_REF#refs/heads/}
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git add README.md
+          git commit -m "Update code coverage badge" || echo "No changes to commit"
+          git push
