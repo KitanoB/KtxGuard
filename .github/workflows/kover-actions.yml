@@ -32,11 +32,18 @@ jobs:
       - name: Update Coverage Badge
         run: ./gradlew updateCoverageBadge updateKotlinBadge
 
+      # ... (étapes précédentes)
+
+      # Define a timestamp variable
+      - name: Set timestamp
+        run: echo "TIMESTAMP=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+
+      # Commit changes to a new branch using the timestamp variable
       - name: Commit changes to a new branch
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Actions Bot"
-          git checkout -b update-coverage-badge-$(date +'%Y%m%d%H%M%S')
+          git checkout -b update-coverage-badge-${TIMESTAMP}
           git add README.md
           git commit -m "Update code coverage badge" || echo "No changes to commit"
           git remote set-url origin https://${{ secrets.MY_GITHUB_SECRET }}@github.com/${{ github.repository }}.git
@@ -48,4 +55,4 @@ jobs:
           token: ${{ secrets.MY_GITHUB_SECRET }}
           title: "Update code coverage badge"
           body: "Automated update of the code coverage badge."
-          branch: update-coverage-badge-$(date +'%Y%m%d%H%M%S')
+          branch: update-coverage-badge-${{ env.TIMESTAMP }}
