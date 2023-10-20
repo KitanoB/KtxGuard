@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kitano.core.CrypterFactorTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-10-20T22:49:39" hostname="fv-az442-235" time="0.003">
+  <properties/>
+  <testcase name="createCrypter with algorithm type DES returns a DESCrypter instance" classname="com.kitano.core.CrypterFactorTest" time="0.001"/>
+  <testcase name="createCrypter with algorithm type AES returns a AESCrypter instance" classname="com.kitano.core.CrypterFactorTest" time="0.0"/>
+  <testcase name="createCrypter with algorithm type RSA returns a RSACrypter instance" classname="com.kitano.core.CrypterFactorTest" time="0.0"/>
+  <testcase name="createCrypter with algorithm type UNKNOWN throws IllegalArgumentException" classname="com.kitano.core.CrypterFactorTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

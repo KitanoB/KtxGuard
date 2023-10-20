@@ -1,0 +1,23 @@
+AUDLEtO1FtjrrFGsrQiQmTmZLidUb3qkHZ6fLAWNl58XA2o9vY4l7Ww4YfFRo4P5g
+AWU8ad8Cmb47jdfXX7IvO0d3SV8D2/Zf03pHb4kSxxTpZFAScxGBPFh94W9egBR/b
+AEkkHVukp0yYLTr1qPMdw9C8pw7vKf9Yzbw1K6lDu8Pz/K1+Odo5x8u0pVKgFEZ57
+Iusage: KtxGuard -a <ALGORITHM> [-d <FILE>] [-df <FILE>] [-e <FILE>] [-ef
+>       <FILE>] [-h] [-l] [-o <FILE>] -p <PASSWORD> [-qr] [-r]
+'Do something useful with an input file
+
+7 -a,--algorithm <ALGORITHM>   The algorithm to use for
+5                              encryption/decryption.
+1 -d,--decrypt <FILE>          Decrypts a string.
+/ -df,--decryptFile <FILE>     Decrypts a file.
+1 -e,--encrypt <FILE>          Encrypts a string.
+/ -ef,--encryptFile <FILE>     Encrypts a file.
+8 -h,--help                    Prints this help message.
+> -l,--list                    Lists all available algorithms.
+; -o,--output <FILE>           The output file to write to.
+6 -p,--password <PASSWORD>     The password to use for
+5                              encryption/decryption.
+G -qr,--qrcode                 Generates a QR code from the public key.
+; -r,--random                  Generates a random password.
+
+.Please report issues at http://kita.no/issues
+AhatsfsB/azPYz/E1dqbgue3fk5wHvQD4rZQLrWlGZCdgVfgwDI5X2rUPhb1Fb0Q4
