@@ -39,7 +39,7 @@ jobs:
       # Verify the current branch and create a new branch if needed
       - name: Verify Current Branch
         run: |
-          CURRENT_BRANCH=$(git branch --show-current)
+          CURRENT_BRANCH=${GITHUB_REF#refs/heads/}
           if [ "$CURRENT_BRANCH" != "main" ]; then
             git checkout main
             git checkout -b update-coverage-badge-${TIMESTAMP}
