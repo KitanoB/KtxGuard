@@ -24,7 +24,7 @@ jobs:
 
       - name: Build and run kover
         run: |
-          ./gradlew build kover
+          ./gradlew build koverlog
 
       - name: Update README badge
         run: ./gradlew updateCoverageBadge
