@@ -32,18 +32,26 @@ jobs:
       - name: Update Coverage Badge
         run: ./gradlew updateCoverageBadge updateKotlinBadge
 
-
       # Define a timestamp variable
       - name: Set timestamp
         run: echo "TIMESTAMP=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+
+      # Verify the current branch and create a new branch if needed
+      - name: Verify Current Branch
+        run: |
+          CURRENT_BRANCH=$(git symbolic-ref --short HEAD)
+          if [ "$CURRENT_BRANCH" != "main" ]; then
+            git checkout main
+            git checkout -b update-coverage-badge-${TIMESTAMP}
+          fi
+        env:
+          TIMESTAMP: ${{ env.TIMESTAMP }}
 
       # Commit changes to a new branch
       - name: Commit changes to a new branch
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Actions Bot"
-          git checkout main # ensure you are on the main branch before creating a new one
-          git checkout -b update-coverage-badge-${TIMESTAMP}
           git add README.md
           git commit -m "Update code coverage badge" || echo "No changes to commit"
           git remote set-url origin https://${{ secrets.MY_GITHUB_SECRET }}@github.com/${{ github.repository }}.git
