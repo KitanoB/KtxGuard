@@ -1,16 +1,13 @@
 package com.kitano.core
 
-import com.kitano.core.AlgorithmType
-import com.kitano.core.CrypterFactory
 import com.kitano.core.exceptions.IncorrectKeyException
-import java.security.InvalidKeyException
 import java.security.KeyPair
 import java.security.KeyPairGenerator
 import java.security.PrivateKey
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertFailsWith
+
 /**
  * Test class for the RSA algorithm
  * Created by KitanoB on 2018/11/11.

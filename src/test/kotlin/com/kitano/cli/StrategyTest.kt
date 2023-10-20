@@ -1,8 +1,6 @@
 package com.kitano.cli
 
 import com.kitano.cli.internal.UserInputProvider
-import com.kitano.cli.utils.Utils
-import com.kitano.cli.utils.UtilsCLI
 import junit.framework.TestCase.assertTrue
 import kotlin.test.AfterTest
 import kotlin.test.Test

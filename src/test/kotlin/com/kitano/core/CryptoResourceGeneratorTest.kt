@@ -1,10 +1,12 @@
 package com.kitano.core
 
 import com.kitano.core.CryptoResourceGenerator.generateSalt
-import org.junit.Assert.*
-import org.junit.Test
 import java.security.NoSuchAlgorithmException
 import javax.crypto.SecretKeyFactory
+import org.junit.Assert.assertArrayEquals
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Test
 
 class CryptoResourceGeneratorTest {
 

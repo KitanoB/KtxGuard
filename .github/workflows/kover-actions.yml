@@ -27,7 +27,7 @@ jobs:
           ./gradlew build koverlog
 
       - name: Update README badge
-        run: ./gradlew updateCoverageBadge
+        run: ./gradlew updateCoverageBadge  updateKotlinBadge
 
       - name: Commit and push if changed
         run: |

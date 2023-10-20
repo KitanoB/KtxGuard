@@ -6,7 +6,6 @@ import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 import org.apache.commons.cli.CommandLine
 import org.apache.commons.cli.Option
-import org.apache.commons.cli.Options
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito.mock

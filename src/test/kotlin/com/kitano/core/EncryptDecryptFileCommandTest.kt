@@ -3,13 +3,13 @@ package com.kitano.core
 import com.kitano.cli.DecryptFileCommand
 import com.kitano.cli.EncryptFileCommand
 import com.kitano.core.crypters.symetric.AESCrypter
+import java.io.File
+import java.nio.file.Files
 import org.junit.After
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito
-import java.io.File
-import java.nio.file.Files
 
 class EncryptDecryptFileCommandTest {
 

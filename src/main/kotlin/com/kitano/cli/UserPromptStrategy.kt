@@ -2,7 +2,6 @@ package com.kitano.cli
 
 import com.kitano.cli.internal.MissingArgumentStrategy
 import com.kitano.cli.internal.UserInputProvider
-import java.util.Scanner
 import org.apache.commons.cli.CommandLine
 import org.apache.commons.cli.DefaultParser
 import org.apache.commons.cli.Option
