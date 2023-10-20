@@ -5,7 +5,7 @@
 KTXGuard is a sophisticated tool built with Ktor. It leverages the power of Kotlin for back-end services and provides robust encryption utilities with BouncyCastle. (educational purpose only)
 
 ## Features
-* Robust encryption utilities including AES, DES, TwoFish, and RSA.
+* Robust encryption utilities including AES, DES, and RSA.
 * Command-line interface tools for easy management.
 * Dependency Injection with Koin for easy management and scalability.
 * Unit tests with Kotlin test framework.
