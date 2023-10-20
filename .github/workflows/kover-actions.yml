@@ -26,7 +26,7 @@ jobs:
 
       # Run tests and generate coverage report
       - name: Run tests and generate coverage report
-        run: ./gradlew test koverHtmlReport
+        run: ./gradlew koverlog
 
       # Update coverage badge
       - name: Update Coverage Badge
