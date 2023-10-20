@@ -15,8 +15,8 @@ import java.security.PrivateKey
  * Created by KitanoB on 2023/10/10.
  */
 class DecryptStringCommand(
-    private val input: String,
-    private val password: String?,
+    val input: String,
+    val password: String?,
     private val privateKey: PrivateKey?,
     private val algorithmType: AlgorithmType,
 ) : Command {

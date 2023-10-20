@@ -15,10 +15,10 @@ import java.security.PublicKey
  * Created by KitanoB on 2023/10/10.
  */
 class EncryptStringCommand(
-    private val input: String,
-    private val password: String?,
-    private val publicKey: PublicKey?,
-    private val algorithmType: AlgorithmType,
+    val input: String,
+    val password: String?,
+    val publicKey: PublicKey?,
+    val algorithmType: AlgorithmType,
 ) : Command {
     override fun execute() {
         val crypterContext = CrypterContext(CrypterFactory.createCrypter(algorithmType))

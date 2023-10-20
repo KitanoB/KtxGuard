@@ -17,7 +17,7 @@ import java.security.PublicKey
  */
 class EncryptFileCommand(
     private val filePath: String,
-    private val password: String?,
+    val password: String?,
     private val publicKey: PublicKey?,
     private val algorithmType: AlgorithmType,
     private val newFilePath: String?,

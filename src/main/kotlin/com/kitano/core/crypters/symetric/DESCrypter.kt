@@ -1,11 +1,10 @@
-
 package com.kitano.core.crypters.symetric
 
 import com.kitano.core.AlgorithmType
 import com.kitano.core.CryptoConstants
-import com.kitano.core.internal.ICipher
 import com.kitano.core.CryptoResourceGenerator
 import com.kitano.core.exceptions.IncorrectKeyException
+import com.kitano.core.internal.ICipher
 import java.security.PrivateKey
 import java.security.PublicKey
 import java.util.Base64
@@ -21,7 +20,10 @@ class DESCrypter : ICipher {
 
     override fun encrypt(input: String, password: String?, publicKey: PublicKey?): String {
         val salt = cryptoResourceGenerator.generateSalt()
-        val keySpec = SecretKeySpec(cryptoResourceGenerator.deriveKey(password!!, salt, CryptoConstants.DES_KEY_SIZE), AlgorithmType.DES.name)
+        val keySpec = SecretKeySpec(
+            cryptoResourceGenerator.deriveKey(password!!, salt, CryptoConstants.DES_KEY_SIZE),
+            AlgorithmType.DES.name
+        )
         val ivSpec = IvParameterSpec(cryptoResourceGenerator.generateIV(CryptoConstants.DES_IV_SIZE))
 
         val cipher = Cipher.getInstance(CryptoConstants.DES_TRANSFORMATION)
@@ -39,6 +41,9 @@ class DESCrypter : ICipher {
     }
 
     override fun decrypt(input: String, password: String?, privateKey: PrivateKey?): String {
+
+        if (password == null) throw IncorrectKeyException("Password cannot be null.")
+
         val decodedInput = Base64.getDecoder().decode(input)
 
         val salt = ByteArray(16)
@@ -48,7 +53,10 @@ class DESCrypter : ICipher {
         val cipherText = ByteArray(decodedInput.size - salt.size - iv.size)
         System.arraycopy(decodedInput, salt.size + iv.size, cipherText, 0, cipherText.size)
 
-        val keySpec = SecretKeySpec(cryptoResourceGenerator.deriveKey(password!!, salt, CryptoConstants.DES_KEY_SIZE), AlgorithmType.DES.name)
+        val keySpec = SecretKeySpec(
+            cryptoResourceGenerator.deriveKey(password, salt, CryptoConstants.DES_KEY_SIZE),
+            AlgorithmType.DES.name
+        )
         val ivSpec = IvParameterSpec(iv)
 
         val cipher = Cipher.getInstance(CryptoConstants.DES_TRANSFORMATION)

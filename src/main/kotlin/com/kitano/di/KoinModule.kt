@@ -1,16 +1,13 @@
 package com.kitano.di
 
-import com.kitano.cli.ArgumentParserImpl
-import com.kitano.cli.utils.UtilsCLI
-import com.kitano.cli.internal.ArgumentParser
+import com.kitano.cli.ConsoleInputProvider
+import com.kitano.cli.internal.UserInputProvider
 import com.kitano.cli.utils.Utils
+import com.kitano.cli.utils.UtilsCLI
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
 
 fun initKoin() {
-    val argParserModule = module {
-        single<ArgumentParser> { ArgumentParserImpl() }
-    }
     val utilsModule = module {
         single { Utils() }
     }
@@ -18,7 +15,11 @@ fun initKoin() {
         single { UtilsCLI() }
     }
 
+    val userInput = module {
+        single<UserInputProvider> { ConsoleInputProvider() }
+    }
+
     startKoin {
-        modules(listOf(argParserModule, utilsModule, utilsCLI))
+        modules(listOf(utilsModule, utilsCLI, userInput))
     }
 }

@@ -16,7 +16,7 @@ import java.security.PrivateKey
  */
 class DecryptFileCommand(
     private val filePath: String,
-    private val password: String?,
+    val password: String?,
     private val privateKey: PrivateKey?,
     private val algorithmType: AlgorithmType,
 ) : Command {

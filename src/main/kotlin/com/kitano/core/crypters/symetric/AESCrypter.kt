@@ -43,11 +43,14 @@ class AESCrypter : ICipher {
     }
 
     override fun decrypt(input: String, password: String?, privateKey: PrivateKey?): String {
+
+        if (password == null) throw IncorrectKeyException("Password cannot be null.")
+
         val fullCipher = Base64.getDecoder().decode(input)
         val salt = ByteArray(16)
         System.arraycopy(fullCipher, 0, salt, 0, salt.size)
 
-        val key = deriveKey(password!!, salt, AlgorithmType.AES)
+        val key = deriveKey(password, salt, AlgorithmType.AES)
 
         val cipher = getCipher()
         val iv = ByteArray(AlgorithmType.AES.ivSize)
@@ -82,8 +85,9 @@ class AESCrypter : ICipher {
         algorithmType: AlgorithmType,
     ): SecretKeySpec {
         val factory = SecretKeyFactory.getInstance(CryptoConstants.PBKDF2_HMAC_SHA256_ALGORITHM)
-        val spec = PBEKeySpec(password.toCharArray(), salt, 65536, algorithmType.keyLength )
+        val spec = PBEKeySpec(password.toCharArray(), salt, 65536, algorithmType.keyLength)
         val secretKey = factory.generateSecret(spec)
         val keyBytes = secretKey.encoded
         return SecretKeySpec(keyBytes, algorithmType.name)
-    }}
+    }
+}

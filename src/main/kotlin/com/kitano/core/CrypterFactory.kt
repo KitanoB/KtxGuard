@@ -1,11 +1,9 @@
 package com.kitano.core
 
+import com.kitano.core.crypters.asymetric.RSACrypter
 import com.kitano.core.crypters.symetric.AESCrypter
 import com.kitano.core.crypters.symetric.DESCrypter
-import com.kitano.core.crypters.asymetric.RSACrypter
-import com.kitano.core.crypters.symetric.TwoFishCrypter
 import com.kitano.core.internal.ICipher
-import java.security.Security
 
 
 /**
@@ -20,12 +18,11 @@ object CrypterFactory {
      * @return A new instance of the given algorithm
      */
     fun createCrypter(algorithmType: AlgorithmType): ICipher {
-        Security.addProvider(org.bouncycastle.jce.provider.BouncyCastleProvider())
         return when (algorithmType) {
             AlgorithmType.AES -> AESCrypter()
-            AlgorithmType.TWOFISH -> TwoFishCrypter()
             AlgorithmType.DES -> DESCrypter()
             AlgorithmType.RSA -> RSACrypter()
+            else -> throw IllegalArgumentException("Unknown algorithm type")
         }
     }
 }

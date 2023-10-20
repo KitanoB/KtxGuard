@@ -6,7 +6,7 @@ package com.kitano.core
  */
 enum class AlgorithmType(val keyLength: Int, val transformation: String, val ivSize: Int) {
     AES(128, "AES/CBC/PKCS5PADDING", 16),
-    TWOFISH(256, "TWOFISH/CBC/PKCS5PADDING", 16),
     DES(64, "DES/CBC/PKCS5PADDING", 8),
-    RSA(128, "RSA/ECB/PKCS1PADDING", 16);
+    RSA(128, "RSA/ECB/PKCS1PADDING", 16),
+    UNKNOWN(0, "", 0);
 }

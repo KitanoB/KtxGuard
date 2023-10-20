@@ -1,15 +1,43 @@
 package com.kitano.cli
 
+import com.kitano.cli.exceptions.InvalidCommandException
 import com.kitano.cli.internal.Command
+import com.kitano.cli.utils.UtilsCLI
 import com.kitano.core.AlgorithmType
 import java.security.PrivateKey
 import java.security.PublicKey
 import java.security.SecureRandom
 import java.util.Base64
+import kotlin.system.exitProcess
 import org.apache.commons.cli.CommandLine
+import org.apache.commons.cli.HelpFormatter
+import org.apache.commons.cli.Options
+import org.koin.java.KoinJavaComponent
 
 object CommandFactory {
+
+    private val utilsCLI: UtilsCLI by KoinJavaComponent.inject(UtilsCLI::class.java)
+
     fun createCommand(cmd: CommandLine): Command? {
+
+        val options = utilsCLI.generateCliOptions()
+
+        if (cmd.options == null) {
+            printHelp("KtxGuard", options)
+            throw InvalidCommandException("No argument provided. Please provide an argument.")
+        }
+
+        if (cmd.hasOption("h") || cmd.hasOption("help")) {
+            printHelp("KtxGuard", options)
+            exitProcess(0)
+        }
+
+        if (cmd.hasOption("kp") || cmd.hasOption("keypair")) {
+            val key = utilsCLI.generateRsaKeyPair()
+            println("Public key: ${key.public}")
+            println("Private key: ${key.private}")
+            exitProcess(0)
+        }
 
         val commandType = CommandType.values().firstOrNull { cmd.hasOption(it.shortOpt) || cmd.hasOption(it.longOpt) }
         var password = cmd.getOptionValue("p") ?: cmd.getOptionValue("password")
@@ -18,12 +46,16 @@ object CommandFactory {
             if (cmd.hasOption("r") || cmd.hasOption("random")) {
                 password = generateRandomKeyBase64(32)
             } else {
-                    println("No password provided. Please provide a password.")
-                    return null
+                throw InvalidCommandException("No password provided. Please provide a password.")
             }
         }
 
         val algorithmType = determineAlgorithm(cmd)
+
+        if (commandType == null) {
+            printHelp("KtxGuard", options)
+            throw InvalidCommandException("No valid command provided. Please provide a valid command.")
+        }
 
         return when (commandType) {
             CommandType.ENCRYPT_STRING -> EncryptStringCommand(
@@ -55,7 +87,6 @@ object CommandFactory {
                 algorithmType
             )
 
-            else -> null
         }
     }
 
@@ -64,7 +95,6 @@ object CommandFactory {
         return when (true) {
             algorithm.startsWith("aes", true) -> AlgorithmType.AES
             algorithm.startsWith("des", true) -> AlgorithmType.DES
-            algorithm.startsWith("twofish", true) -> AlgorithmType.TWOFISH
             algorithm.startsWith("rsa", true) -> AlgorithmType.RSA
             else -> AlgorithmType.AES
         }
@@ -75,5 +105,13 @@ object CommandFactory {
         SecureRandom().nextBytes(randomBytes)
         return Base64.getEncoder().encodeToString(randomBytes)
     }
+
+    private fun printHelp(cmdLineSyntax: String, options: Options) {
+        val formatter = HelpFormatter()
+        val header = "Do something useful with an input file\n\n"
+        val footer = "\nPlease report issues at http://kita.no/issues"
+        formatter.printHelp(cmdLineSyntax, header, options, footer, true)
+    }
+
 
 }

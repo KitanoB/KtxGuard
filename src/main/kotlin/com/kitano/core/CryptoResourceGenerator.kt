@@ -12,7 +12,6 @@ object CryptoResourceGenerator {
     }
 
 
-
     fun generateIV(size: Int): ByteArray {
         val iv = ByteArray(size)
         SecureRandom().nextBytes(iv)
