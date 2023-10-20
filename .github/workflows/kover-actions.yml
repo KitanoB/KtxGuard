@@ -40,7 +40,7 @@ jobs:
           git checkout -b update-coverage-badge-$(date +'%Y%m%d%H%M%S')
           git add README.md
           git commit -m "Update code coverage badge" || echo "No changes to commit"
-          git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git remote set-url origin https://${{ secrets.MY_GITHUB_SECRET }}@github.com/${{ github.repository }}.git
           git push origin HEAD
 
       # Create a Pull Request from the new branch to main
