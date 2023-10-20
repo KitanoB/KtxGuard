@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kitano.core.AlgoRSATest" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-10-20T22:49:37" hostname="fv-az442-235" time="1.98">
+  <properties/>
+  <testcase name="when encrypt with rsa same string is not retrieved after a corrupted privateKey" classname="com.kitano.core.AlgoRSATest" time="0.463"/>
+  <testcase name="when encrypt with rsa same string is  retrieved after decrypt private key" classname="com.kitano.core.AlgoRSATest" time="0.204"/>
+  <testcase name="when encrypt with rsa same string is not retrieved after a corrupted publicKey" classname="com.kitano.core.AlgoRSATest" time="0.638"/>
+  <testcase name="when encrypt empty string with rsa and then decrypt returns empty string" classname="com.kitano.core.AlgoRSATest" time="0.176"/>
+  <testcase name="when encrypt special characters with aes same string is retrieved after decrypt" classname="com.kitano.core.AlgoRSATest" time="0.264"/>
+  <testcase name="when encrypt with rsa same string is not retrieved after decrypt with nullPrivateKey" classname="com.kitano.core.AlgoRSATest" time="0.234"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

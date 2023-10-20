@@ -1,3 +1,5 @@
+![Coverage](https://img.shields.io/badge/Coverage-77-green) ![GraalVM](https://img.shields.io/badge/GraalVM-21-blue) ![Kotlin](https://img.shields.io/badge/Kotlin-100-orange)
+
 # KtxGuard
 
 KTXGuard is a sophisticated tool built with Ktor. It leverages the power of Kotlin for back-end services and provides robust encryption utilities with BouncyCastle. (educational purpose only)

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kitano.core.AlgoAESTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2023-10-20T22:49:34" hostname="fv-az442-235" time="1.923">
+  <properties/>
+  <testcase name="when decrypt with different key throws exception" classname="com.kitano.core.AlgoAESTest" time="0.284"/>
+  <testcase name="when encrypt with aes same string is not retrieved after decrypt with wrong password" classname="com.kitano.core.AlgoAESTest" time="0.27"/>
+  <testcase name="when encrypt with aes same string is not retrieved after decrypt null password" classname="com.kitano.core.AlgoAESTest" time="0.277"/>
+  <testcase name="when encrypt with aes same string is retrieved after decrypt" classname="com.kitano.core.AlgoAESTest" time="0.264"/>
+  <testcase name="when encrypt long string with aes does throw" classname="com.kitano.core.AlgoAESTest" time="0.28"/>
+  <testcase name="when encrypt empty string with aes and then decrypt returns empty string" classname="com.kitano.core.AlgoAESTest" time="0.278"/>
+  <testcase name="when encrypt special characters with aes same string is retrieved after decrypt" classname="com.kitano.core.AlgoAESTest" time="0.265"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
