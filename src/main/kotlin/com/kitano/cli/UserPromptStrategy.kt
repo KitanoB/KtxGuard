@@ -16,11 +16,8 @@ class UserPromptStrategy(private val inputProvider: UserInputProvider) : Missing
     )
 
     override fun handleMissingArguments(cmd: CommandLine): CommandLine {
-        val scanner = Scanner(System.`in`)
-
-
         val newOptions = Options()
-        val actionOption = determineAction(scanner, newOptions)
+        val actionOption = determineAction(newOptions)
         val actionPrompt = getActionPrompt(actionOption)
         val actionValue = getUserInput(actionPrompt)
         val newArgsList = mutableListOf<String>("-$actionOption", actionValue)
@@ -57,9 +54,9 @@ class UserPromptStrategy(private val inputProvider: UserInputProvider) : Missing
         }
     }
 
-    private fun determineAction(scanner: Scanner, newOptions: Options): String {
+    private fun determineAction(newOptions: Options): String {
         val action = getUserInput("Please provide an action (encrypt, decrypt): ")
-        val forFile = isActionForFile(scanner)
+        val forFile = isActionForFile()
         val actionOption = determineActionOption(action, forFile)
 
         val newOption = Option.builder(actionOption).hasArg().argName(actionOption).build()
@@ -69,7 +66,7 @@ class UserPromptStrategy(private val inputProvider: UserInputProvider) : Missing
     }
 
 
-    private fun isActionForFile(scanner: Scanner): Boolean {
+    private fun isActionForFile(): Boolean {
         val value = getUserInput("Is it for a file? (y/n): ")
         return value.equals("y", ignoreCase = true)
     }

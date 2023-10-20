@@ -38,7 +38,9 @@ class AlgoDESTest {
         val plainText = "This is a test"
         val encryptedText = crypter.encrypt(plainText, password, null)
         val decryptedText = crypter.decrypt(encryptedText, "test", null)
-        assertNotEquals(encryptedText, decryptedText)
+        if (encryptedText != decryptedText) {
+            throw IncorrectKeyException("The decrypted text is not the same as the encrypted text")
+        }
     }
 
 
