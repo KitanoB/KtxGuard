@@ -1,1 +1,2 @@
-rootProject.name = "com.kitano.ktxguard"
+rootProject.name = "KtxGuard"
+include("main", "crypto-core")
