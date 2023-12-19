@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kitano.cli.ArgumentParserImplTest" tests="18" skipped="0" failures="0" errors="0" timestamp="2023-12-19T05:39:43" hostname="fv-az973-67" time="2.039">
+  <properties/>
+  <testcase name="test parse with validAlgorithm but no value passed as output" classname="com.kitano.cli.ArgumentParserImplTest" time="1.884"/>
+  <testcase name="test parse with validAlgorithm but invalid value as output" classname="com.kitano.cli.ArgumentParserImplTest" time="0.091"/>
+  <testcase name="test parse with decrypt string and decrypt file at the same time options command" classname="com.kitano.cli.ArgumentParserImplTest" time="0.003"/>
+  <testcase name="test parse with encrypt string and decrypt string at the same time options command" classname="com.kitano.cli.ArgumentParserImplTest" time="0.003"/>
+  <testcase name="test parse with validAlgorithm lowercase" classname="com.kitano.cli.ArgumentParserImplTest" time="0.021"/>
+  <testcase name="test parse with invalid file extension" classname="com.kitano.cli.ArgumentParserImplTest" time="0.003"/>
+  <testcase name="test parse with invalidAlgorithm" classname="com.kitano.cli.ArgumentParserImplTest" time="0.003"/>
+  <testcase name="test parse with encrypt file and invalid path" classname="com.kitano.cli.ArgumentParserImplTest" time="0.002"/>
+  <testcase name="test parse with validAlgorithm mixedcase" classname="com.kitano.cli.ArgumentParserImplTest" time="0.003"/>
+  <testcase name="test parse with validAlgorithm but no value passed as output 2" classname="com.kitano.cli.ArgumentParserImplTest" time="0.003"/>
+  <testcase name="test parse with encrypt string and decrypt file at the same time" classname="com.kitano.cli.ArgumentParserImplTest" time="0.002"/>
+  <testcase name="test parse with encrypt string and encrypt file at the same time options command" classname="com.kitano.cli.ArgumentParserImplTest" time="0.002"/>
+  <testcase name="test parse with validAlgorithm mixedcase and 2 same options and invalid one" classname="com.kitano.cli.ArgumentParserImplTest" time="0.002"/>
+  <testcase name="test parse with valid options command" classname="com.kitano.cli.ArgumentParserImplTest" time="0.003"/>
+  <testcase name="test parse with decrypt file and invalid path" classname="com.kitano.cli.ArgumentParserImplTest" time="0.002"/>
+  <testcase name="test parse with validAlgorithm mixedcase and 2 same options" classname="com.kitano.cli.ArgumentParserImplTest" time="0.003"/>
+  <testcase name="test parse with validAlgorithm UPPERCASE" classname="com.kitano.cli.ArgumentParserImplTest" time="0.002"/>
+  <testcase name="test parse with invalid options command" classname="com.kitano.cli.ArgumentParserImplTest" time="0.002"/>
+  <system-out><![CDATA[null
+null
+null
+null
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kitano.cli.UtilsCliTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2023-12-19T05:39:45" hostname="fv-az973-67" time="0.011">
+  <properties/>
+  <testcase name="test an invalid extension is invalid" classname="com.kitano.cli.UtilsCliTest" time="0.0"/>
+  <testcase name="when generateOptions is asked a list of Options is returned with the correct options long description" classname="com.kitano.cli.UtilsCliTest" time="0.0"/>
+  <testcase name="test a valid path is valid" classname="com.kitano.cli.UtilsCliTest" time="0.001"/>
+  <testcase name="test a valid path with a valid extension is valid" classname="com.kitano.cli.UtilsCliTest" time="0.001"/>
+  <testcase name="when an invalid option is passed to validate throws InvalidCommandException" classname="com.kitano.cli.UtilsCliTest" time="0.005"/>
+  <testcase name="test a valid path with a invalid extension" classname="com.kitano.cli.UtilsCliTest" time="0.001"/>
+  <testcase name="when generateOptions is asked a list of Options is returned with the correct options hasArg" classname="com.kitano.cli.UtilsCliTest" time="0.0"/>
+  <testcase name="when generateOptions is asked a list of Options is returned with the correct options description" classname="com.kitano.cli.UtilsCliTest" time="0.0"/>
+  <testcase name="when generateOptions is asked a list of Options is returned with the correct options" classname="com.kitano.cli.UtilsCliTest" time="0.0"/>
+  <testcase name="when generateOptions is asked a list of Options is returned with the correct options required" classname="com.kitano.cli.UtilsCliTest" time="0.0"/>
+  <testcase name="test a valid extension is valid" classname="com.kitano.cli.UtilsCliTest" time="0.0"/>
+  <testcase name="when generateOptions is asked a list of Options is returned" classname="com.kitano.cli.UtilsCliTest" time="0.001"/>
+  <testcase name="when generateOptions is asked a list of Options is returned with the correct options argName" classname="com.kitano.cli.UtilsCliTest" time="0.0"/>
+  <testcase name="when generateOptions is asked a list of Options is returned with the correct options numberOfArgs" classname="com.kitano.cli.UtilsCliTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

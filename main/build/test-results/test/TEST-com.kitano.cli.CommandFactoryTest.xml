@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kitano.cli.CommandFactoryTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-12-19T05:39:45" hostname="fv-az973-67" time="0.141">
+  <properties/>
+  <testcase name="when createCommand with encrypt string option and no password" classname="com.kitano.cli.CommandFactoryTest" time="0.086"/>
+  <testcase name="test createCommand with encrypt string option and no algorithm provided" classname="com.kitano.cli.CommandFactoryTest" time="0.04"/>
+  <testcase name="test createCommand with encrypt string option and provided password" classname="com.kitano.cli.CommandFactoryTest" time="0.005"/>
+  <testcase name="when createCommand has no argument the function execute is not called" classname="com.kitano.cli.CommandFactoryTest" time="0.01"/>
+  <system-out><![CDATA[usage: KtxGuard -a <ALGORITHM> [-d <FILE>] [-df <FILE>] [-e <FILE>] [-ef
+       <FILE>] [-h] [-l] [-o <FILE>] -p <PASSWORD> [-qr] [-r]
+Do something useful with an input file
+
+ -a,--algorithm <ALGORITHM>   The algorithm to use for
+                              encryption/decryption.
+ -d,--decrypt <FILE>          Decrypts a string.
+ -df,--decryptFile <FILE>     Decrypts a file.
+ -e,--encrypt <FILE>          Encrypts a string.
+ -ef,--encryptFile <FILE>     Encrypts a file.
+ -h,--help                    Prints this help message.
+ -l,--list                    Lists all available algorithms.
+ -o,--output <FILE>           The output file to write to.
+ -p,--password <PASSWORD>     The password to use for
+                              encryption/decryption.
+ -qr,--qrcode                 Generates a QR code from the public key.
+ -r,--random                  Generates a random password.
+
+Please report issues at http://kita.no/issues
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

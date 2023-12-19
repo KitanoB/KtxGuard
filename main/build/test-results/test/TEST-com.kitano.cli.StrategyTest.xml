@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kitano.cli.StrategyTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-12-19T05:39:45" hostname="fv-az973-67" time="0.437">
+  <properties/>
+  <testcase name="test selectStrategy with complete args returns DefaultValueStrategy" classname="com.kitano.cli.StrategyTest" time="0.016"/>
+  <testcase name="test selectStrategy with option requiring value followed by empty value returns UserPromptStrategy" classname="com.kitano.cli.StrategyTest" time="0.39"/>
+  <testcase name="test selectStrategy with empty args returns UserPromptStrategy" classname="com.kitano.cli.StrategyTest" time="0.03"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Dec 19, 2023 5:39:45 AM org.jline.utils.Log logr
+WARNING: Unable to create a system terminal, creating a dumb terminal (enable debug logging for more information)
+Dec 19, 2023 5:39:45 AM org.jline.utils.Log logr
+WARNING: Unable to create a system terminal, creating a dumb terminal (enable debug logging for more information)
+]]></system-err>
+</testsuite>
