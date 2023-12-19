@@ -14,7 +14,7 @@ jobs:
     steps:
       # Checkout the code
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Setup JDK
       - name: Set up JDK
@@ -48,5 +48,5 @@ jobs:
           token: ${{ secrets.MY_GITHUB_SECRET }}
           title: "Update code coverage badge"
           body: "Automated update of the code coverage badge."
-          base: main # specify the main branch as the base
+          base: main
           branch: update-coverage-badge-${{ env.TIMESTAMP }}
