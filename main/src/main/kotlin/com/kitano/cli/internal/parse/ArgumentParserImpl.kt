@@ -7,6 +7,7 @@ import org.apache.commons.cli.CommandLineParser
 import org.apache.commons.cli.DefaultParser
 import org.koin.java.KoinJavaComponent.inject
 
+
 /**
  * Argument parser implementation
  * @see ArgumentParser
@@ -22,6 +23,7 @@ class ArgumentParserImpl(private val missingArgumentStrategy: MissingArgumentStr
         val parser: CommandLineParser = DefaultParser()
 
         var cmd: CommandLine? = null
+
 
         try {
             cmd = parser.parse(optionsAvailable, args)

@@ -27,6 +27,7 @@ dependencies {
     implementation("io.insert-koin:koin-logger-slf4j:$koin_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.9.10")
     testImplementation("org.mockito.kotlin:mockito-kotlin:5.1.0")
+    implementation("org.jline:jline:3.21.0")
 }
 
 

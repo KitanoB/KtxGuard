@@ -83,7 +83,7 @@ class UtilsCLI {
                 if (!algorithmAvaivable) {
                     throw InvalidCommandException("The algorithm is invalid.")
                 }
-            } else {
+            } else if (!cmd.args.isNullOrEmpty())  {
                 throw InvalidCommandException("The algorithm is invalid.")
             }
         }

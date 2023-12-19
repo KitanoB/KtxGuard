@@ -22,7 +22,6 @@ import org.mockito.kotlin.any
 
 class ArgumentParserImplTest {
 
-
     private var parserImpl: ArgumentParser? = null
 
     @Mock
@@ -48,21 +47,20 @@ class ArgumentParserImplTest {
 
     @Test
     fun `test parse with valid options command`() {
-        val mockArgumentParser = mock(ArgumentParserImpl::class.java)
         val args = arrayOf("-e", "sampleString", "-p", "password123", "-a", "aes")
-        mockArgumentParser.parse(args)
+        parserImpl?.parse(args)
     }
 
     @Test(expected = InvalidCommandException::class)
     fun `test parse with invalid options command`() {
         val args = arrayOf("-xyz", "sampleString", "-p", "password123", "-a", "aes")
-        parserImpl!!.parse(args)
+        parserImpl?.parse(args)
     }
 
     @Test(expected = InvalidCommandException::class)
     fun `test parse with encrypt string and decrypt string at the same time options command`() {
         val args = arrayOf("-e", "sampleString", "-d", "password123", "-a", "aes")
-        parserImpl!!.parse(args)
+        parserImpl?.parse(args)
     }
 
     @Test(expected = InvalidCommandException::class)
