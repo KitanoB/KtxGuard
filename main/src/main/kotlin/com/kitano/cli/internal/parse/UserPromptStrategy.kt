@@ -1,11 +1,18 @@
 package com.kitano.cli.internal.parse
 
+import com.kitano.cli.internal.parse.UserPromptStrategy.CLIContext.expectingFilePath
 import org.apache.commons.cli.CommandLine
 import org.apache.commons.cli.DefaultParser
 import org.apache.commons.cli.Option
 import org.apache.commons.cli.Options
+import org.jline.reader.LineReader
 
-class UserPromptStrategy(private val inputProvider: UserInputProvider) : MissingArgumentStrategy {
+class UserPromptStrategy(private val lineReader: LineReader) : MissingArgumentStrategy {
+
+    object CLIContext {
+        var expectingFilePath = false
+    }
+
 
     private val optionPrompts = mapOf(
         "p" to "Please provide a password: ",
@@ -40,13 +47,13 @@ class UserPromptStrategy(private val inputProvider: UserInputProvider) : Missing
     }
 
     private fun getUserInput(prompt: String): String {
-        return inputProvider.getUserInput(prompt)
+        return lineReader.readLine(prompt).trim()
     }
 
     private fun getActionPrompt(action: String): String {
-        return when (action) {
+        return when (action.trim()) {
             "e", "d" -> "Please provide a string to ${if (action == "e") "encrypt" else "decrypt"}: "
-            "ef", "df" -> "Please provide a file to ${if (action == "ef") "encrypt" else "decrypt"}: "
+            "ef", "df" -> "Please provide a file (Drag&Drop available) to ${if (action == "ef") "encrypt" else "decrypt"}: "
             else -> throw IllegalArgumentException("Invalid action")
         }
     }
@@ -65,7 +72,8 @@ class UserPromptStrategy(private val inputProvider: UserInputProvider) : Missing
 
     private fun isActionForFile(): Boolean {
         val value = getUserInput("Is it for a file? (y/n): ")
-        return value.equals("y", ignoreCase = true)
+        expectingFilePath = value.equals("y", ignoreCase = true) || value.equals("yes", ignoreCase = true)
+        return expectingFilePath
     }
 
     private fun determineActionOption(action: String, forFile: Boolean): String {
@@ -77,4 +85,6 @@ class UserPromptStrategy(private val inputProvider: UserInputProvider) : Missing
             else -> throw IllegalArgumentException("Invalid action or file option")
         }
     }
+
+
 }
