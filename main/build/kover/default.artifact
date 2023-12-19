@@ -1,0 +1,7 @@
+main/src/main/kotlin
+main/src/main/java
+
+main/build/classes/java/main
+main/build/classes/kotlin/main
+
+main/build/kover/bin-reports/test.ic
